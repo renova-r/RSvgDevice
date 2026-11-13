@@ -701,7 +701,7 @@ static pGEDevDesc RSvgDevice(char **file, char **bg, char **fg, double *width,
 	pDevDesc dev;
 
 	if (debug[0] == NA_LOGICAL)
-		debug = FALSE;
+		debug = NULL;
 
 	R_GE_checkVersionOrDie(R_GE_version);
 	R_CheckDeviceAvailable();

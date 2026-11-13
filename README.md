@@ -4,6 +4,8 @@ An R graphics device that writes plots as W3C Scalable Vector Graphics (SVG) fil
 
 Compatibility updates by Renova.
 
+Version 0.6.4.4.9002 is a platform compatibility patch: in `src/devSVG.c` the zero-pointer assignment `debug = FALSE;` is written as `debug = NULL;` (same compiled behaviour, no clang `-Wnon-literal-null-conversion` warning on macOS). `DESCRIPTION` also drops the stale `Date` field and the trailing period of `Title`.
+
 Version 0.6.4.4.9001 replaces the deprecated `Calloc` memory macro with `R_Calloc` in `src/devSVG.c`, so the device builds with current R headers. No R function was changed.
 
 ## Install
@@ -19,7 +21,7 @@ Or install this exact release from its tag:
 
 ```r
 install.packages("remotes")
-remotes::install_github("renova-r/RSvgDevice@renova-0.6.4.4.9001")
+remotes::install_github("renova-r/RSvgDevice@renova-0.6.4.4.9002")
 ```
 
 [Release notes](NEWS.md) · [Renova package directory](https://github.com/renova-r/revival-catalog)
