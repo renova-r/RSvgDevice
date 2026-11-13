@@ -706,7 +706,7 @@ static pGEDevDesc RSvgDevice(char **file, char **bg, char **fg, double *width,
 	R_GE_checkVersionOrDie(R_GE_version);
 	R_CheckDeviceAvailable();
 	BEGIN_SUSPEND_INTERRUPTS {
-		if (!(dev = (pDevDesc) Calloc(1, NewDevDesc)))
+		if (!(dev = (pDevDesc) R_Calloc(1, NewDevDesc)))
 			error("unable to allocate memory for NewDevDesc");
 
 		if (!SVGDeviceDriver(dev, file[0], bg[0], fg[0], width[0], height[0],
